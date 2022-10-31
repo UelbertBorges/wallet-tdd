@@ -45,7 +45,7 @@ namespace Wallet.Application.UseCases.CreateUser
 
         private async Task<Domain.Wallet> SaveWalletInDatabase(User user)
         {
-            return await _walletsRepository.Save(Domain.Wallet.CreateWallet(user.Id));
+            return await _walletsRepository.Save(Domain.Wallet.CreateWallet(user.Id, GenerateAuthorizationCode(user.Id.ToString())));
         }
 
         private async Task<User> SaveUserInDatabase(CreateUserInput input)

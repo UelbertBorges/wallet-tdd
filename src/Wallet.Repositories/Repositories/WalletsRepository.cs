@@ -12,6 +12,8 @@ namespace Wallet.Repositories.Repositories
             _mongoContext = mongoContext;
         }
 
+        public async Task<Domain.Wallet?> FindById(Guid id) => await _mongoContext.Wallets.Find(w => w.Id == id).FirstOrDefaultAsync();
+
         public async Task<Domain.Wallet> Save(Domain.Wallet wallet)
         {
             await _mongoContext.Wallets.ReplaceOneAsync(w => w.Id == wallet.Id, wallet, new ReplaceOptions() { IsUpsert = true });

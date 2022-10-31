@@ -104,7 +104,7 @@ namespace Wallet.Tests.Units.UseCases
                 .ReturnsAsync(UsersFixture.GetUser());
             mockWalletsRepository
                 .Setup(repo => repo.Save(It.IsAny<Domain.Wallet>()))
-                .ReturnsAsync(Domain.Wallet.CreateWallet(UsersFixture.GetUser().Id, 0));
+                .ReturnsAsync(Domain.Wallet.CreateWallet(UsersFixture.GetUser().Id, "authCode", 0));
 
             var expected = new SuccessUseCaseOutput<CreateUserOutput>(new("guid", "code", 0));
 

@@ -1,5 +1,6 @@
 using Wallet.Application.OutputPorts;
 using Wallet.Application.UseCases.CreateUser;
+using Wallet.Application.UseCases.WalletDeposit;
 using Wallet.Repositories;
 using Wallet.Repositories.Repositories;
 
@@ -44,4 +45,5 @@ static void ConfigureMongo(IServiceCollection services, IConfiguration configura
 static void ConfigureUseCases(IServiceCollection services)
 {
     services.AddScoped<ICreateUserUseCase, CreateUserUseCase>();
+    services.AddScoped<IWalletDepositUseCase, WalletDepositUseCase>();
 }

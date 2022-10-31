@@ -4,7 +4,7 @@
     {
         public static Domain.Wallet GetWallet()
         {
-            return Domain.Wallet.CreateWallet(UsersFixture.GetUser().Id, 0);
+            return Domain.Wallet.CreateWallet(UsersFixture.GetUser().Id, "authCode", 0m);
         }
     }
 }
