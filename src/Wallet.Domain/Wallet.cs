@@ -5,7 +5,7 @@
         public Guid Id { get; private set; }
         public Guid Owner { get; private set; }
         public decimal Balance { get; private set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; private set; }
 
         private Wallet(Guid id, Guid owner, decimal balance)
         {

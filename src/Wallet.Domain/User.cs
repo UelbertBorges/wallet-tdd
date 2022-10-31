@@ -6,7 +6,7 @@
         public string Name { get; private set; }
         public string Document { get; private set; }
         public string Password { get; private set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; private set; }
 
         private User(string name, string document, string password)
         {
